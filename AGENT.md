@@ -46,4 +46,5 @@ const _getList = async () => {
 10.方法命名使用小驼峰命名，如果是页面网络请求方法，使用下划线+小驼峰命名，例：_getList
 11.图片文件命名统一使用蛇形命名，图片全部统一放在src/assets/images/，命名需按模块正规合理，避免冲突
 12.数据类型定义应分别放在同模块下的types文件夹内
+13.普通使用pinia store,需中间加上Info,例：const userInfoStore = userStore()，const layoutInfoStore = layoutStore()
 ```
