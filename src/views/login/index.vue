@@ -1,14 +1,12 @@
+<script setup lang="ts">
+import logoUrl from '@/assets/images/logo.png'
+</script>
+
 <template>
   <div class="login-page">
     <div class="login-decoration" aria-hidden="true">
       <div class="login-orbit"></div>
-      <span class="login-art"
-        ><span
-          class="iconfont icon-gongnengdingyi"
-          style="font-size: 100px"
-          aria-hidden="true"
-        ></span
-      ></span>
+      <img class="login-art" :src="logoUrl" alt="" />
       <div class="login-copy">
         <span>SMALL TOOLS. BIG POSSIBILITIES.</span>
         <h2>日常的小事，<br />都能做得更好。</h2>
@@ -17,13 +15,8 @@
     </div>
     <main class="login-main">
       <router-link to="/" class="brand"
-        ><span class="brand-mark"
-          ><span
-            class="iconfont icon-gongnengdingyi"
-            style="font-size: 25px"
-            aria-hidden="true"
-          ></span></span
-        ><span>Pocket Kit<small>百宝箱 · 管理后台</small></span></router-link
+        ><img class="brand-mark" :src="logoUrl" alt="百宝箱 Logo" />
+        <span>Pocket Kit<small>百宝箱 · 管理后台</small></span></router-link
       >
       <div class="login-content">
         <div class="eyebrow">WELCOME BACK</div>
@@ -81,13 +74,11 @@
   left: -200px;
 }
 .login-art {
-  width: 170px;
+  width: 180px;
   height: 180px;
   border-radius: 40px 40px 60px 60px;
-  background: #779b7f;
-  color: #eef4df;
-  display: grid;
-  place-items: center;
+  object-fit: contain;
+  display: block;
   transform: rotate(-10deg);
   box-shadow: 0 30px 50px #6c886530;
   margin-top: 10vh;

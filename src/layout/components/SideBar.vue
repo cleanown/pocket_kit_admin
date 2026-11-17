@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, ref, watch } from 'vue'
+import logoUrl from '@/assets/images/logo.png'
 import type { MenuInstance } from 'element-plus'
 import { useRoute, useRouter } from 'vue-router'
 import { useAdminStore } from '@/store/admin'
@@ -72,13 +73,8 @@ watch(
   <aside class="sidebar" :class="{ 'is-mobile': mobile, 'is-collapsed': collapsed }" aria-label="侧边导航">
     <div class="sidebar-brand">
       <router-link to="/" class="brand" @click="$emit('close')"
-        ><span class="brand-mark"
-          ><span
-            class="iconfont icon-gongnengdingyi"
-            style="font-size: 24px"
-            aria-hidden="true"
-          ></span></span
-        ><span v-if="!collapsed">Pocket Kit<small>百宝箱 · 管理后台</small></span></router-link
+        ><img class="brand-mark" :src="logoUrl" alt="百宝箱 Logo" />
+        <span v-if="!collapsed">Pocket Kit<small>百宝箱 · 管理后台</small></span></router-link
       >
       <el-button
         v-if="mobile"
@@ -92,9 +88,9 @@ watch(
       </el-button>
     </div>
     <div v-if="!collapsed" class="workspace">
-      <span class="workspace-icon">P</span
-      ><span>百宝箱工作空间<small>本地演示环境</small></span
-      ><span class="workspace-dot"></span>
+      <img class="workspace-icon" :src="logoUrl" alt="" />
+      <span>百宝箱工作空间<small>本地演示环境</small></span>
+      <span class="workspace-dot"></span>
     </div>
     <el-menu
       ref="menuRef"
@@ -214,9 +210,10 @@ watch(
   margin-top: 3px;
 }
 .workspace-icon {
-  display: grid;
-  place-items: center;
-  width: 29px;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+  width: 30px;
   height: 30px;
   background: #edf5ef;
   color: #36856b;

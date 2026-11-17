@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import logoUrl from '@/assets/images/logo.png'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import SettingsEditDialog from './components/SettingsEditDialog.vue'
 import { useAdminStore } from '@/store/admin'
@@ -122,13 +123,7 @@ async function reset() {
       </div>
       <aside>
         <section class="panel settings-panel about-panel">
-          <span class="brand-mark"
-            ><span
-              class="iconfont icon-gongnengdingyi"
-              style="font-size: 27px"
-              aria-hidden="true"
-            ></span
-          ></span>
+          <img class="brand-mark" :src="logoUrl" alt="百宝箱 Logo" />
           <h2>Pocket Kit Admin</h2>
           <p>百宝箱管理工作台</p>
           <span class="category-tag">v1.0.0 · 本地演示</span>

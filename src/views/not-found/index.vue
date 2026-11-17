@@ -1,12 +1,11 @@
+<script setup lang="ts">
+import logoUrl from '@/assets/images/logo.png'
+</script>
+
 <template>
   <main class="not-found">
-    <span class="brand-mark"
-      ><span
-        class="iconfont icon-gongnengdingyi"
-        style="font-size: 28px"
-        aria-hidden="true"
-      ></span></span
-    ><strong>404</strong>
+    <img class="brand-mark" :src="logoUrl" alt="百宝箱 Logo" />
+    <strong>404</strong>
     <h1>这个口袋里，还没有内容</h1>
     <p>页面不存在，回工作台看看吧。</p>
     <router-link to="/" class="button primary"
