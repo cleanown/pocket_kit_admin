@@ -1,3 +1,4 @@
+import config from "@/config";
 import axios, { type AxiosRequestConfig, type AxiosResponse, type Method } from "axios";
 
 /**
@@ -20,6 +21,7 @@ function resFiler (res: AxiosResponse): CustomRes {
 }
 
 const server = axios.create({
+  baseURL: config.baseUrl,
   timeout: 60 * 1000
 })
 
